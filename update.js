@@ -1,8 +1,8 @@
 function setTipp(amount,tip){
-    return (amount /tip)
+    return ((amount*tip)/100).toFixed(2) // Round 2 a number to 2 decimal
 }
 function setTotall(amount,tip){
-    return amount+(amount /tip)
+    return (amount+((amount*tip)/100)).toFixed(2)
 }
 
 function update(input1,input2,model){
