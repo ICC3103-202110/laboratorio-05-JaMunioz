@@ -5,7 +5,7 @@ const inquirer = require('inquirer')
 function getTitle(){
     return chalk.yellow( //color
         figlet.textSync(
-            'Hello there', //mesage
+            'Tip Calculator App', //mesage
             {
                 horizontalLayout: 'full',
                 font: 'Nancyj-Underlined'
@@ -26,19 +26,19 @@ function getTable(model){
 }
 
 function inputForm(model){
-    const {input} = model
+    const {input1} = model
     const {input2} = model
     return inquirer.prompt([
         {
-            name: 'input',
+            name: 'input1',
             type: 'number',
             message: 'Bill Amount?',
-            default: input2,
+            default: input1,
             validate: function(value){
                 if(value >= 0){
                     return true
                 } else {
-                    return 'Enter a integer greater or equal than 0 '
+                    return 'Enter a integer greater or equal than 0.'
                 }
             }
         },
@@ -46,12 +46,13 @@ function inputForm(model){
             name: 'input2',
             type: 'number',
             message: 'Tip %?',
-            default: input,
+            default: input2,
             validate: function(value){
-                if(value >= 0){
+                if(value >= 0 && value <= 100){
                     return true
                 } else {
-                    return 'Enter a integer greater or equal than 0 '
+                    return 'Enter a integer greater or equal than 0, and lower'
+                    +'or equal than 100.'
                 }
             }
         },

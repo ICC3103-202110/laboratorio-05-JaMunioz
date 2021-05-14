@@ -1,19 +1,21 @@
-function increase(number,mount){
-    return number + mount
+function setTipp(amount,tip){
+    return (amount /tip)
+}
+function setTotall(amount,tip){
+    return amount+(amount /tip)
 }
 
-function update(input,input2, model){
-    const {mount} = model
-    const newMount = increase(mount,input)
-    const setTip = increase(mount,input)
+function update(input1,input2,model){
+    const setTip = setTipp(input1,input2)
+    const setTotal = setTotall(input1,input2)
     return {
         ...model,
+        input1: input1,
         input2: input2,
-        input: input,
-        mount: newMount,
-        tip_in_percent: input2,
-        tip: setTip,
-        total: 1234,
+        mount: '$'+input1,
+        tip_in_percent: input2+'%',
+        tip: '$'+setTip,
+        total: '$'+setTotal,
     }
 }
 
