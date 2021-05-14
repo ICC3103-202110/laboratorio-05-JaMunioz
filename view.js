@@ -3,9 +3,9 @@ const chalk = require('chalk')
 const inquirer = require('inquirer')
 
 function getTitle(){
-    return chalk.yellow( //color
+    return chalk.yellow( //color.
         figlet.textSync(
-            'Tip Calculator App', //mesage
+            'Tip Calculator App', //mesage.
             {
                 horizontalLayout: 'full',
                 font: 'Nancyj-Underlined'
@@ -14,14 +14,14 @@ function getTitle(){
     )
 }
 
-function getTable(model){
+function getTable(model){ //table.
     const {mount} = model
     const {tip_in_percent} = model
     const {tip} = model
     const {total} = model
     return [
         {"Bill Amount": mount,"Tip (%)": tip_in_percent,"Tip": tip,
-        "Total": total}, //table
+        "Total": total}, 
     ]
 }
 
